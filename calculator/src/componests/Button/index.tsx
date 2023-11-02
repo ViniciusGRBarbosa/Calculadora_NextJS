@@ -5,13 +5,14 @@ import React, { Component } from "react";
 interface ButtonProps {
     key: string | number;
     text: string | number;
+    onClick?: () => void;
 }
 
 class Button extends Component<ButtonProps> {
     render() {
-        const { text } = this.props;
+        const { text, onClick } = this.props;
         return (
-            <button className="grid-item ">
+            <button className="grid-item " onClick={onClick}>
                 {text}
             </button>
         );
